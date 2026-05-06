@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import BackgroundBlobs from "./components/BackgroundBlobs";
 
 export const metadata: Metadata = {
-  title: "Creative Hub",
-  description: "Main Platform",
+  title: "Creative-Hub | One Ecosystem. Infinite Growth.",
+  description: "A premium hub for Meet Gen, Talent Hub, Resume Hub, and more.",
 };
 
 export default function RootLayout({
@@ -19,7 +23,12 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" ></link>
       </head>
 
-      <body>{children}</body>
+      <body>
+        <BackgroundBlobs />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
