@@ -46,11 +46,11 @@ export default function LandingPage() {
   return (
     <div style={{ paddingTop: "120px" }}>
       {/* --- HERO SECTION --- */}
-      <section style={{ 
-        minHeight: "80vh", 
-        display: "flex", 
+      <section style={{
+        minHeight: "80vh",
+        display: "flex",
         flexDirection: "column",
-        alignItems: "center", 
+        alignItems: "center",
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
@@ -69,10 +69,10 @@ export default function LandingPage() {
             transition={{ duration: 1 }}
           >
             <div style={{ marginBottom: "32px" }}>
-              <span style={{ 
-                fontSize: "0.75rem", 
-                fontWeight: 800, 
-                letterSpacing: "0.3em", 
+              <span style={{
+                fontSize: "0.75rem",
+                fontWeight: 800,
+                letterSpacing: "0.3em",
                 textTransform: "uppercase",
                 color: "var(--accent-primary)",
                 background: "rgba(0, 112, 243, 0.05)",
@@ -84,15 +84,15 @@ export default function LandingPage() {
               </span>
             </div>
 
-            <h1 className="section-title" style={{ 
-              fontSize: "clamp(2.8rem, 7vw, 4.5rem)", 
+            <h1 className="section-title" style={{
+              fontSize: "clamp(2.8rem, 7vw, 4.5rem)",
               marginTop: "24px",
               letterSpacing: "-0.04em",
               fontWeight: 800,
               lineHeight: 1.0
             }}>
               One Ecosystem.<br />
-              <span style={{ 
+              <span style={{
                 background: "linear-gradient(90deg, #000, #444)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent"
@@ -101,8 +101,8 @@ export default function LandingPage() {
               </span>
             </h1>
 
-            <p className="section-subtitle" style={{ 
-              marginInline: "auto", 
+            <p className="section-subtitle" style={{
+              marginInline: "auto",
               marginTop: "40px",
               fontSize: "1.2rem",
               maxWidth: "680px",
@@ -147,11 +147,11 @@ export default function LandingPage() {
                 >
                   <div style={{ display: "flex", gap: "8px", marginBottom: "24px" }}>
                     {product.tags.map(tag => (
-                      <span key={tag} style={{ 
-                        fontSize: "0.7rem", 
-                        fontWeight: 600, 
-                        padding: "4px 12px", 
-                        background: "rgba(0,0,0,0.05)", 
+                      <span key={tag} style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 600,
+                        padding: "4px 12px",
+                        background: "rgba(0,0,0,0.05)",
                         borderRadius: "99px",
                         textTransform: "uppercase"
                       }}>
@@ -163,8 +163,8 @@ export default function LandingPage() {
                   <p style={{ color: "var(--text-secondary)", fontSize: "1rem", marginBottom: "32px" }}>
                     {product.description}
                   </p>
-                  <Link href={`/products#${product.title.toLowerCase().replace(" ", "-")}`} style={{ 
-                    fontWeight: 500, 
+                  <Link href={`/products#${product.title.toLowerCase().replace(" ", "-")}`} style={{
+                    fontWeight: 500,
                     fontSize: "0.9rem",
                     display: "flex",
                     alignItems: "center",
@@ -210,13 +210,13 @@ export default function LandingPage() {
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.25, 1],
                     opacity: [0.3, 0.8, 0.3]
                   }}
-                  transition={{ 
-                    duration: 5 + i, 
-                    repeat: Infinity, 
+                  transition={{
+                    duration: 5 + i,
+                    repeat: Infinity,
                     ease: "easeInOut",
                     delay: i * 0.6
                   }}
@@ -240,17 +240,17 @@ export default function LandingPage() {
                 zIndex: 1
               }} />
 
-              <motion.img 
-                src="/cloud-hub.png" 
+              <motion.img
+                src="/cloud.png"
                 alt="Cloud Hub Infrastructure"
-                animate={{ 
+                animate={{
                   y: [0, -15, 0],
                   filter: ["drop-shadow(0 15px 30px rgba(0, 112, 243, 0.3))", "drop-shadow(0 30px 60px rgba(0, 112, 243, 0.5))", "drop-shadow(0 15px 30px rgba(0, 112, 243, 0.3))"]
                 }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                style={{ 
-                  width: "55%", 
-                  height: "auto", 
+                style={{
+                  width: "55%",
+                  height: "auto",
                   objectFit: "contain",
                   zIndex: 2
                 }}
