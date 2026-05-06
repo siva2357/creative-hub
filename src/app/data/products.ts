@@ -12,6 +12,7 @@ export const detailedProducts = [
       "Live Community: Built-in chat and streaming for creators."
     ],
     imageAlt: "Meet Gen UI Preview",
+    image: "/Meet-Hub-Logo.png",
     align: "left",
     color: "#e6f4ea",
     accent: "#34a853"
@@ -29,6 +30,7 @@ export const detailedProducts = [
       "Engineer Networking: Find your next collaborator."
     ],
     imageAlt: "Community Hub View",
+    image: "/Community-Hub-Logo.png",
     align: "right",
     color: "#f1f3f4",
     accent: "#5f6368"
@@ -46,6 +48,7 @@ export const detailedProducts = [
       "Integrated Applications: Apply using your Resume Hub profile."
     ],
     imageAlt: "Talent Hub Portal",
+    image: "/Talent-Hub-Logo.png",
     align: "left",
     color: "#e8f0fe",
     accent: "#4285f4"
@@ -63,6 +66,7 @@ export const detailedProducts = [
       "Cloud Storage: Access your documents anywhere via Cloud Hub."
     ],
     imageAlt: "Resume Hub Tools",
+    image: "/Resume-Hub-Logo.png",
     align: "right",
     color: "#fef7e0",
     accent: "#fbbc04"
@@ -80,6 +84,7 @@ export const detailedProducts = [
       "Cloud Assignments: Submit and review files via Cloud Hub."
     ],
     imageAlt: "Course Platform Dashboard",
+    image: "/Course-Hub-Logo.png",
     align: "left",
     color: "#fce8e6",
     accent: "#ea4335"
@@ -97,6 +102,7 @@ export const detailedProducts = [
       "Seamless Integration: Powers every other product in the hub."
     ],
     imageAlt: "Cloud Hub Infrastructure",
+    image: "/Cloud-Hub-Logo.png",
     align: "right",
     color: "#f3e8fd",
     accent: "#a142f4"

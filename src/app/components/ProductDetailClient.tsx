@@ -11,6 +11,7 @@ interface Product {
   fullDescription: string;
   features: string[];
   imageAlt: string;
+  image?: string;
   color: string;
   accent: string;
 }
@@ -106,7 +107,15 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                     }}
                   />
                 ))}
-                 <i className="bi bi-cpu" style={{ fontSize: "6rem", color: "var(--accent-primary)", filter: "drop-shadow(0 0 20px rgba(0, 112, 243, 0.5))", zIndex: 1 }}></i>
+                {product.image ? (
+                  <img 
+                    src={product.image} 
+                    alt={product.imageAlt} 
+                    style={{ width: "240px", height: "auto", objectFit: "contain", zIndex: 1 }} 
+                  />
+                ) : (
+                  <i className="bi bi-cpu" style={{ fontSize: "6rem", color: "var(--accent-primary)", filter: "drop-shadow(0 0 20px rgba(0, 112, 243, 0.5))", zIndex: 1 }}></i>
+                )}
               </motion.div>
             </div>
           </div>
@@ -187,12 +196,47 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             <p style={{ maxWidth: "700px", margin: "0 auto 60px auto", color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.7 }}>
               {product.title} works seamlessly with every other tool in the Creative-Hub suite, powered by a unified account and the Cloud Hub infrastructure.
             </p>
-            <div style={{ display: "flex", justifyContent: "center", gap: "48px", opacity: 0.6, filter: "grayscale(100%)" }}>
-              <i className="bi bi-cpu" style={{ fontSize: "2.5rem" }}></i>
-              <i className="bi bi-diagram-3" style={{ fontSize: "2.5rem" }}></i>
-              <i className="bi bi-cloud-check" style={{ fontSize: "2.5rem" }}></i>
-              <i className="bi bi-shield-check" style={{ fontSize: "2.5rem" }}></i>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ 
+                display: "inline-flex", 
+                justifyContent: "center", 
+                gap: "48px", 
+                background: "rgba(255, 255, 255, 0.4)",
+                backdropFilter: "blur(20px)",
+                padding: "32px 64px",
+                borderRadius: "99px",
+                border: "1.5px solid rgba(0, 112, 243, 0.1)",
+                boxShadow: "0 20px 40px rgba(0, 112, 243, 0.05)",
+                flexWrap: "wrap",
+                alignItems: "center"
+              }}
+            >
+              {[
+                { name: "Meet-Hub-Logo", color: "#34a853" },
+                { name: "Community-Hub-Logo", color: "#5f6368" },
+                { name: "Talent-Hub-Logo", color: "#4285f4" },
+                { name: "Resume-Hub-Logo", color: "#fbbc04" },
+                { name: "Course-Hub-Logo", color: "#ea4335" },
+                { name: "Cloud-Hub-Logo", color: "#a142f4" }
+              ].map((logo) => (
+                <motion.img 
+                  key={logo.name}
+                  whileHover={{ scale: 1.2, filter: "grayscale(0%) opacity(1)" }}
+                  src={`/${logo.name}.png`} 
+                  alt={logo.name} 
+                  style={{ 
+                    height: "45px", 
+                    width: "auto", 
+                    objectFit: "contain",
+                    filter: "grayscale(100%) opacity(0.5)",
+                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                  }} 
+                />
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>

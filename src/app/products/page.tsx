@@ -77,16 +77,23 @@ export default function ProductsPage() {
                       }}
                     >
                       <div style={{
-                        width: "48px",
-                        height: "48px",
-                        borderRadius: "50%",
-                        border: "1.5px solid rgba(0,0,0,0.1)",
+                        width: "72px",
+                        height: "44px",
+                        borderRadius: "12px",
+                        border: `1.5px solid ${p.accent}`, // Solid accent for clarity
+                        background: "#fff",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
+                        overflow: "hidden",
+                        padding: "4px",
+                        boxShadow: `0 4px 12px ${p.accent}22`
                       }}>
-                        <i className={`bi bi-${i === 0 ? 'camera-video' : i === 1 ? 'people' : i === 2 ? 'briefcase' : i === 3 ? 'file-earmark-text' : i === 4 ? 'mortarboard' : 'cloud'}`}
-                          style={{ fontSize: "1.2rem", color: "#000" }}></i>
+                        <img 
+                          src={(p as any).image} 
+                          alt={p.title} 
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+                        />
                       </div>
                       <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-primary)", letterSpacing: "0.02em" }}>
                         {p.title.split(' ')[0]}
@@ -164,13 +171,28 @@ export default function ProductsPage() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 40px 80px rgba(0,0,0,0.05)"
+                    boxShadow: "0 40px 80px rgba(0,0,0,0.05)",
+                    overflow: "hidden",
+                    border: "1px solid rgba(0,0,0,0.05)"
                   }}
                 >
-                  <div style={{ textAlign: "center" }}>
-                    <i className="bi bi-layers" style={{ fontSize: "5rem", opacity: 0.1 }}></i>
-                    <p style={{ marginTop: "20px", fontWeight: 500, opacity: 0.5 }}>{product.imageAlt}</p>
-                  </div>
+                  {(product as any).image ? (
+                    <img 
+                      src={(product as any).image} 
+                      alt={product.imageAlt} 
+                      style={{ 
+                        width: "100%", 
+                        height: "100%", 
+                        objectFit: "contain",
+                        padding: "40px"
+                      }}
+                    />
+                  ) : (
+                    <div style={{ textAlign: "center" }}>
+                      <i className="bi bi-layers" style={{ fontSize: "5rem", opacity: 0.1 }}></i>
+                      <p style={{ marginTop: "20px", fontWeight: 500, opacity: 0.5 }}>{product.imageAlt}</p>
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </div>

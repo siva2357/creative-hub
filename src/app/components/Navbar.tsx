@@ -38,25 +38,16 @@ export default function Navbar() {
         width: "95%",
         maxWidth: "1400px",
         padding: "16px 48px",
-        boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
         border: "1px solid rgba(0,0,0,0.1)",
       }}
     >
       {/* LEFT: Brand */}
       <Link href="/" style={{ display: "flex", alignItems: "center", gap: "16px", justifySelf: "start", textDecoration: "none" }}>
-        <img 
-          src="https://res.cloudinary.com/dpp8aspqs/image/upload/v1772290558/AI_Logo_dxqrdz.svg" 
-          alt="Creative-Hub Logo" 
-          style={{ width: "48px", height: "48px", objectFit: "contain" }}
+        <img
+          src="/logo.png"
+          alt="Creative-Hub Logo"
+          style={{ width: "auto", height: "60px", objectFit: "contain" }}
         />
-        <span style={{ 
-          fontWeight: 800, 
-          fontSize: "1.6rem", 
-          letterSpacing: "-0.03em",
-          color: "var(--text-primary)"
-        }}>
-          Creative-Hub
-        </span>
       </Link>
 
       {/* CENTER: Links */}
@@ -81,7 +72,7 @@ export default function Navbar() {
             >
               {link.name}
               {isActive && (
-                <motion.div 
+                <motion.div
                   layoutId="active-nav"
                   style={{
                     position: "absolute",
@@ -101,11 +92,11 @@ export default function Navbar() {
 
       {/* RIGHT: Action */}
       <div style={{ justifySelf: "end", display: "flex", gap: "20px", alignItems: "center" }}>
-        <Link 
-          href="/login" 
-          style={{ 
-            fontSize: "0.9rem", 
-            fontWeight: 500, 
+        <Link
+          href="/login"
+          style={{
+            fontSize: "0.9rem",
+            fontWeight: 500,
             color: "var(--text-secondary)",
             transition: "var(--transition-smooth)",
             textDecoration: "none"
@@ -115,13 +106,13 @@ export default function Navbar() {
         >
           Sign In
         </Link>
-        <Link 
-          href="/signup" 
-          className="pill-button" 
-          style={{ 
-            padding: "10px 28px", 
+        <Link
+          href="/signup"
+          className="pill-button"
+          style={{
+            padding: "10px 28px",
             fontSize: "0.9rem",
-            textDecoration: "none" 
+            textDecoration: "none"
           }}
         >
           Sign Up
