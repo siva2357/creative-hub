@@ -32,10 +32,10 @@ export default function ProductsPage() {
                 }}>
                   The Suite
                 </span>
-                <h1 className="section-title" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", textAlign: "left", lineHeight: 1.1 }}>
+                <h1 className="section-title" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", lineHeight: 1.1 }}>
                   The Integrated<br />Ecosystem
                 </h1>
-                <p className="section-subtitle" style={{ textAlign: "left", marginTop: "32px", maxWidth: "100%" }}>
+                <p className="section-subtitle" style={{ marginTop: "32px", maxWidth: "100%" }}>
                   Explore the six interconnected pillars designed to accelerate your professional journey from discovery to deployment.
                 </p>
               </motion.div>
@@ -46,6 +46,7 @@ export default function ProductsPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
+                className="hero-icon-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(3, 1fr)",
@@ -62,6 +63,7 @@ export default function ProductsPage() {
                   <Link key={p.id} href={`/products/${p.id}`} style={{ textDecoration: "none" }}>
                     <motion.div
                       whileHover={{ scale: 1.05, y: -5 }}
+                      className="hero-icon-card"
                       style={{
                         padding: "24px 10px",
                         textAlign: "center",
@@ -89,10 +91,10 @@ export default function ProductsPage() {
                         padding: "4px",
                         boxShadow: `0 4px 12px ${p.accent}22`
                       }}>
-                        <img 
-                          src={(p as any).image} 
-                          alt={p.title} 
-                          style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+                        <img
+                          src={(p as any).image}
+                          alt={p.title}
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
                         />
                       </div>
                       <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--text-primary)", letterSpacing: "0.02em" }}>
@@ -112,6 +114,7 @@ export default function ProductsPage() {
         <section
           key={product.id}
           id={product.id}
+          className="product-section"
           style={{
             padding: "100px 0",
             background: index % 2 === 0 ? "var(--bg-primary)" : "var(--bg-secondary)"
@@ -140,7 +143,7 @@ export default function ProductsPage() {
                     {product.description}
                   </p>
 
-                  <div className="row g-4">
+                  <div className="row g-4 product-features-row">
                     {product.features.map((feature, fIndex) => (
                       <div className="col-md-6" key={fIndex}>
                         <div style={{ display: "flex", gap: "12px" }}>
@@ -162,6 +165,7 @@ export default function ProductsPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1 }}
+                  className="product-image-container"
                   style={{
                     width: "100%",
                     height: "500px",
@@ -177,12 +181,12 @@ export default function ProductsPage() {
                   }}
                 >
                   {(product as any).image ? (
-                    <img 
-                      src={(product as any).image} 
-                      alt={product.imageAlt} 
-                      style={{ 
-                        width: "100%", 
-                        height: "100%", 
+                    <img
+                      src={(product as any).image}
+                      alt={product.imageAlt}
+                      style={{
+                        width: "100%",
+                        height: "100%",
                         objectFit: "contain",
                         padding: "40px"
                       }}
@@ -210,6 +214,128 @@ export default function ProductsPage() {
           <button className="pill-button" style={{ background: "white", color: "black" }}>Create Your Account</button>
         </div>
       </section>
+
+      <style jsx global>{`
+        /* =========================
+            GLOBAL TYPOGRAPHY
+        ========================== */
+        .section-title, 
+        .section-subtitle, 
+        .product-section h2, 
+        .product-section p,
+        .product-section span {
+          text-align: left !important;
+          text-align: justify !important;
+          hyphens: auto;
+          word-break: break-word;
+        }
+
+        /* Titles should NOT be justified, only left-aligned */
+        .section-title, .product-section h2 {
+          text-align: left !important;
+        }
+
+        /* =========================
+            DESKTOP & TABLET (>= 768px)
+        ========================== */
+        @media (min-width: 768px) {
+          .container-custom {
+            padding-left: 48px !important;
+            padding-right: 48px !important;
+          }
+
+          .row.align-items-center {
+            flex-direction: row !important;
+          }
+          
+          .col-md-6, .col-lg-6 {
+            width: 50% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+
+          .product-image-container {
+            margin-top: 0 !important;
+            height: 380px !important;
+          }
+
+          .product-section .row.flex-row-reverse {
+            flex-direction: row-reverse !important;
+          }
+        }
+
+        /* =========================
+            MOBILE (< 768px)
+        ========================== */
+        @media (max-width: 767px) {
+          .container-custom {
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+          }
+
+          .section-title {
+            font-size: 2.4rem !important;
+            line-height: 1.1 !important;
+            margin-bottom: 20px !important;
+          }
+
+          .section-subtitle {
+            font-size: 1.05rem !important;
+            margin-bottom: 32px !important;
+          }
+
+          /* Hero Section Icon Grid */
+          .hero-icon-grid {
+            padding: 24px !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 12px !important;
+            margin-top: 24px !important;
+            width: 100% !important;
+          }
+
+          .hero-icon-card {
+            padding: 16px 8px !important;
+          }
+
+          /* Product Sections Stacked */
+          .product-section {
+            padding: 60px 0 !important;
+          }
+
+          .product-section .row {
+            flex-direction: column !important;
+          }
+
+          .col-md-6, .col-lg-6 {
+            width: 100% !important;
+            margin-bottom: 40px;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+          }
+
+          .product-section h2 {
+            font-size: 2rem !important;
+            margin-top: 8px !important;
+            width: 100% !important;
+          }
+
+          .product-image-container {
+            height: 260px !important;
+            margin-top: 32px !important;
+            border-radius: 24px !important;
+          }
+
+          .product-features-row {
+            margin-top: 24px !important;
+          }
+        }
+      `}</style>
+
+
+
     </div>
   );
 }
