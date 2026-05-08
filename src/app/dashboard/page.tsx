@@ -45,7 +45,7 @@ export default function DashboardOverview() {
             <div className="app-card" style={{ padding: "32px", height: "100%" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px" }}>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, margin: 0 }}>Recent Activity</h3>
-                <Link href="/dashboard/analytics" style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--accent-primary)", textDecoration: "none" }}>View Analytics</Link>
+                <Link href="/analytics" style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--accent-primary)", textDecoration: "none" }}>View Analytics</Link>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {[
@@ -70,7 +70,7 @@ export default function DashboardOverview() {
               <p style={{ fontSize: "0.95rem", color: "var(--text-secondary)", lineHeight: 1.6, marginBottom: "24px" }}>
                 Did you know? You can sync your Talent Hub profile directly with the Resume Builder to save time.
               </p>
-              <Link href="/dashboard/explore" className="btn-primary" style={{ display: "block", textAlign: "center", textDecoration: "none", padding: "10px", borderRadius: "10px" }}>
+              <Link href="/explore" className="btn-primary" style={{ display: "block", textAlign: "center", textDecoration: "none", padding: "10px", borderRadius: "10px" }}>
                 Explore More Tips
               </Link>
             </div>

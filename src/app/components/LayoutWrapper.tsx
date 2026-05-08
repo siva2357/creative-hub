@@ -15,7 +15,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   // Responsive sidebar initialization
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 992) {
+      if (window.innerWidth >= 1200) {
         setIsSidebarOpen(true);
       } else {
         setIsSidebarOpen(false);
@@ -29,7 +29,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
 
   // Close sidebar on route change ONLY on mobile
   useEffect(() => {
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 1200) {
       setIsSidebarOpen(false);
     }
   }, [pathname]);
@@ -37,18 +37,35 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   // List of paths where Navbar and Footer should be hidden
   const hideLayoutPaths = ["/signin", "/signup", "/verify", "/confirmation", "/login"];
   const isAuthPage = hideLayoutPaths.includes(pathname);
-  const isDashboard = pathname === "/dashboard" || pathname.startsWith("/dashboard/");
+  
+  // Routes that should use the Dashboard/App layout (Sidebar + AuthNavbar)
+  const appRoutes = [
+    "/dashboard",
+    "/profile",
+    "/settings",
+    "/service-requests",
+    "/resume-builder",
+    "/talent-hub",
+    "/course-hub",
+    "/meet-gen",
+    "/community-hub",
+    "/cloud-hub",
+    "/explore",
+    "/analytics"
+  ];
+
+  const isAppPage = appRoutes.some(route => pathname === route || pathname.startsWith(route + "/"));
 
   return (
     <>
       <BackgroundBlobs />
-      {!isAuthPage && !isDashboard && <Navbar />}
-      {isDashboard && <AuthNavbar onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />}
+      {!isAuthPage && !isAppPage && <Navbar />}
+      {isAppPage && <AuthNavbar onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />}
       <div style={{ display: "flex" }}>
-        {isDashboard && <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />}
+        {isAppPage && <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />}
         <main style={{ flexGrow: 1, width: "100%" }}>{children}</main>
       </div>
-      {!isAuthPage && !isDashboard && <Footer />}
+      {!isAuthPage && !isAppPage && <Footer />}
     </>
   );
 }

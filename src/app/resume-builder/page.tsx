@@ -64,24 +64,24 @@ export default function ResumeBuilderPage() {
 
             {/* 2. My Resumes Section (SECOND) */}
             <div className="app-card" style={{ background: "rgba(255, 255, 255, 0.7)", backdropFilter: "blur(10px)", border: "1px solid rgba(255, 255, 255, 0.3)", padding: "40px", marginBottom: "40px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "40px", flexWrap: "wrap", gap: "20px" }}>
                 <div>
                   <h3 style={{ fontSize: "1.5rem", fontWeight: 800, margin: 0 }}>Resume Management</h3>
                   <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", margin: "4px 0 0 0" }}>Your professional document repository</p>
                 </div>
-                <div style={{ display: "flex", gap: "12px" }}>
-                  <button style={{ padding: "10px 20px", borderRadius: "12px", border: "1px solid var(--accent-primary)", background: "transparent", color: "var(--accent-primary)", fontWeight: 700, fontSize: "0.9rem" }}>
+                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                  <button style={{ padding: "10px 20px", borderRadius: "12px", border: "1px solid var(--accent-primary)", background: "transparent", color: "var(--accent-primary)", fontWeight: 700, fontSize: "0.9rem", whiteSpace: "nowrap" }}>
                     <i className="bi bi-upload" style={{ marginRight: "8px" }}></i> Upload CV
                   </button>
-                  <button className="btn-primary" style={{ padding: "10px 24px", borderRadius: "12px", fontSize: "0.9rem" }}>
+                  <button className="btn-primary" style={{ padding: "10px 24px", borderRadius: "12px", fontSize: "0.9rem", whiteSpace: "nowrap" }}>
                     <i className="bi bi-plus-lg" style={{ marginRight: "8px" }}></i> Create New
                   </button>
                 </div>
               </div>
 
-              <div className="row g-0" style={{ borderTop: "1px solid rgba(0,0,0,0.05)", paddingTop: "40px" }}>
+              <div className="row g-4" style={{ borderTop: "1px solid rgba(0,0,0,0.05)", paddingTop: "40px" }}>
                 {/* Created Resumes Column */}
-                <div className="col-lg-6" style={{ paddingRight: "30px", borderRight: "1px solid rgba(0,0,0,0.05)" }}>
+                <div className="col-lg-6">
                   <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "24px" }}>
                     <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "var(--accent-primary)" }}></div>
                     <p style={{ fontSize: "0.85rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-primary)", margin: 0 }}>AI-Assisted Drafts</p>
@@ -128,7 +128,7 @@ export default function ResumeBuilderPage() {
                 </div>
 
                 {/* Uploaded Resumes Column */}
-                <div className="col-lg-6" style={{ paddingLeft: "30px" }}>
+                <div className="col-lg-6">
                   <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "24px" }}>
                     <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#10b981" }}></div>
                     <p style={{ fontSize: "0.85rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-primary)", margin: 0 }}>External Uploads</p>

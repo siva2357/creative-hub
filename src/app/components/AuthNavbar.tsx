@@ -36,7 +36,7 @@ export default function AuthNavbar({ onToggleSidebar }: { onToggleSidebar: () =>
       <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
         <button 
           onClick={onToggleSidebar}
-          className="d-lg-none"
+          className="d-xl-none"
           style={{
             background: "none",
             border: "none",
@@ -172,13 +172,13 @@ export default function AuthNavbar({ onToggleSidebar }: { onToggleSidebar: () =>
                 gap: "4px"
               }}
             >
-              <Link href="/dashboard/profile" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
+              <Link href="/profile" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-person"></i> View Profile
               </Link>
-              <Link href="/dashboard/settings" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
+              <Link href="/settings" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-gear"></i> Account Settings
               </Link>
-              <Link href="/dashboard/service-requests" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
+              <Link href="/service-requests" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-clipboard-check"></i> Service Requests
               </Link>
               <div style={{ height: "1px", background: "rgba(0,0,0,0.05)", margin: "8px 4px" }} />

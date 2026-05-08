@@ -9,7 +9,7 @@ const products = [
     tagline: "Bridging the Gap Between Talent & Opportunity",
     description: "Deep-data insights for recruiters while giving candidates a platform to showcase true creative potential.",
     image: "/talent_hub_preview_1778225449414.png",
-    href: "/dashboard/talent-hub",
+    href: "/talent-hub",
     color: "#3b82f6"
   },
   {
@@ -17,7 +17,7 @@ const products = [
     tagline: "Learning Redefined for the Modern Creator",
     description: "Immersive learning where theory meets practice through HD content and project-based certifications.",
     image: "/course_hub_preview_1778225464509.png",
-    href: "/dashboard/course-hub",
+    href: "/course-hub",
     color: "#10b981"
   },
   {
@@ -25,7 +25,7 @@ const products = [
     tagline: "Collaborative Meetings Without Borders",
     description: "Crystal-clear, low-latency video conferencing suite integrated with real-time collaboration tools.",
     image: "/meet_gen_preview_1778225481685.png",
-    href: "/dashboard/meet-gen",
+    href: "/meet-gen",
     color: "#f43f5e"
   },
   {
@@ -33,7 +33,7 @@ const products = [
     tagline: "Your Infrastructure, Unified",
     description: "Centralized monitoring and asset management for your entire digital ecosystem.",
     image: "/cloud_hub_preview_1778225514083.png",
-    href: "/dashboard/cloud-hub",
+    href: "/cloud-hub",
     color: "#0070f3"
   },
   {
@@ -41,7 +41,7 @@ const products = [
     tagline: "Craft Your Professional Story",
     description: "AI-powered resume building with real-time previews and premium, ATS-friendly templates.",
     image: "/resume_builder_preview_1778225532230.png",
-    href: "/dashboard/resume-builder",
+    href: "/resume-builder",
     color: "#f59e0b"
   },
   {
@@ -49,7 +49,7 @@ const products = [
     tagline: "Where Creators Collaborate",
     description: "A vibrant social space to join specialized groups, share insights, and participate in events.",
     image: "/community_hub_preview_1778225549426.png",
-    href: "/dashboard/community-hub",
+    href: "/community-hub",
     color: "#fb7185"
   }
 ];

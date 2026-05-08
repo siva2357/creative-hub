@@ -340,13 +340,13 @@ button {
   transition: padding-left 0.3s ease;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .dashboard-content-wrapper {
     padding-left: 280px;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .dashboard-content-wrapper {
     padding-left: 0;
   }

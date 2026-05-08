@@ -6,16 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const sidebarLinks = [
-
-  { name: "Explore Ecosystem", href: "/dashboard/explore", icon: "bi-compass", badge: "New" },
+  { name: "Explore Ecosystem", href: "/explore", icon: "bi-compass", badge: "New" },
   { name: "Overview", href: "/dashboard", icon: "bi-grid-1x2" },
-  { name: "Talent Hub", href: "/dashboard/talent-hub", icon: "bi-briefcase", badge: "Live" },
-  { name: "Course Hub", href: "/dashboard/course-hub", icon: "bi-book" },
-  { name: "Meet Gen", href: "/dashboard/meet-gen", icon: "bi-camera-video" },
-  { name: "Community Hub", href: "/dashboard/community-hub", icon: "bi-people" },
-  { name: "Cloud Hub", href: "/dashboard/cloud-hub", icon: "bi-cloud-check" },
-  { name: "Resume Builder", href: "/dashboard/resume-builder", icon: "bi-file-earmark-person" },
-  { name: "Analytics", href: "/dashboard/analytics", icon: "bi-bar-chart" },
+  { name: "Talent Hub", href: "/talent-hub", icon: "bi-briefcase", badge: "Live" },
+  { name: "Course Hub", href: "/course-hub", icon: "bi-book" },
+  { name: "Meet Gen", href: "/meet-gen", icon: "bi-camera-video" },
+  { name: "Community Hub", href: "/community-hub", icon: "bi-people" },
+  { name: "Cloud Hub", href: "/cloud-hub", icon: "bi-cloud-check" },
+  { name: "Resume Builder", href: "/resume-builder", icon: "bi-file-earmark-person" },
+  { name: "Analytics", href: "/analytics", icon: "bi-bar-chart" },
 ];
 
 export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: boolean) => void }) {
@@ -34,7 +33,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsO
       <motion.aside
         initial={false}
         animate={{
-          x: isOpen ? 0 : (window.innerWidth < 992 ? -300 : 0)
+          x: isOpen ? 0 : (window.innerWidth < 1200 ? -300 : 0)
         }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
         style={{
@@ -54,11 +53,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsO
         }}
         className="dashboard-sidebar"
       >
-        <div style={{ padding: "0 16px 24px 16px" }}>
-          <p style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-secondary)", margin: 0 }}>
-            Ecosystem Menu
-          </p>
-        </div>
+
 
         {sidebarLinks.map((link) => {
           const isActive = pathname === link.href;
@@ -67,7 +62,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsO
               key={link.name}
               href={link.href}
               onClick={() => {
-                if (window.innerWidth < 992) {
+                if (window.innerWidth < 1200) {
                   setIsOpen(false);
                 }
               }}
@@ -124,7 +119,7 @@ export default function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsO
               background: "rgba(0,0,0,0.3)",
               zIndex: 1000
             }}
-            className="d-lg-none"
+            className="d-xl-none"
           />
         )}
       </AnimatePresence>
