@@ -22,7 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true);
-    
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -155,13 +155,13 @@ export default function Navbar() {
             style={{ width: "auto", height: "55px", objectFit: "contain" }}
           />
         </Link>
-        
-        <button 
+
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          style={{ 
-            width: "48px", 
-            height: "48px", 
-            background: "rgba(0,112,243,0.05)", 
+          style={{
+            width: "48px",
+            height: "48px",
+            background: "rgba(0,112,243,0.05)",
             borderRadius: "12px",
             display: "flex",
             alignItems: "center",
@@ -199,12 +199,12 @@ export default function Navbar() {
             }}
           >
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href} 
-                style={{ 
-                  fontSize: "0.95rem", 
-                  fontWeight: 600, 
+              <Link
+                key={link.name}
+                href={link.href}
+                style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 600,
                   color: pathname === link.href ? "var(--accent-primary)" : "var(--text-primary)",
                   textDecoration: "none"
                 }}
@@ -214,14 +214,14 @@ export default function Navbar() {
             ))}
             <div style={{ height: "1px", background: "rgba(0,0,0,0.05)", margin: "8px 0" }} />
             <div style={{ display: "flex", gap: "12px", marginTop: "8px" }}>
-              <Link 
-                href="/login" 
-                style={{ 
-                  flex: 1, 
-                  textAlign: "center", 
-                  padding: "10px 20px", 
-                  borderRadius: "12px", 
-                  border: "1.5px solid rgba(0,0,0,0.1)", 
+              <Link
+                href="/login"
+                style={{
+                  flex: 1,
+                  textAlign: "center",
+                  padding: "10px 20px",
+                  borderRadius: "12px",
+                  border: "1.5px solid rgba(0,0,0,0.1)",
                   fontWeight: 600,
                   fontSize: "0.9rem",
                   textDecoration: "none"
@@ -229,13 +229,13 @@ export default function Navbar() {
               >
                 Login
               </Link>
-              <Link 
-                href="/signup" 
-                className="pill-button" 
-                style={{ 
-                  flex: 1, 
-                  textAlign: "center", 
-                  padding: "10px 20px", 
+              <Link
+                href="/signup"
+                className="pill-button"
+                style={{
+                  flex: 1,
+                  textAlign: "center",
+                  padding: "10px 20px",
                   fontSize: "0.9rem",
                   textDecoration: "none"
                 }}

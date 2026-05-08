@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import BackgroundBlobs from "./components/BackgroundBlobs";
+import LayoutWrapper from "./components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "Creative-Hub | One Ecosystem. Infinite Growth.",
@@ -24,10 +22,9 @@ export default function RootLayout({
       </head>
 
       <body>
-        <BackgroundBlobs />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
       </body>
     </html>
   );

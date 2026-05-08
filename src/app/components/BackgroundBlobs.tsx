@@ -28,7 +28,7 @@ export default function BackgroundBlobs() {
           left: "-5%",
           width: "500px",
           height: "500px",
-          background: "radial-gradient(circle, rgba(0, 112, 243, 0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 112, 243, 0.45) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(60px)",
         }}
@@ -48,7 +48,7 @@ export default function BackgroundBlobs() {
           right: "-5%",
           width: "700px",
           height: "700px",
-          background: "radial-gradient(circle, rgba(121, 40, 202, 0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(121, 40, 202, 0.4) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(80px)",
         }}
@@ -67,7 +67,7 @@ export default function BackgroundBlobs() {
           left: "30%",
           width: "400px",
           height: "400px",
-          background: "radial-gradient(circle, rgba(0, 255, 255, 0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0, 255, 255, 0.25) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(50px)",
         }}

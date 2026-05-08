@@ -171,3 +171,67 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
 }
+
+/* Auth Forms */
+.auth-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-card-large);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.input-custom {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.input-custom:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+  background: #ffffff;
+}
+
+.input-custom::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.otp-input {
+  width: clamp(40px, 12vw, 64px);
+  height: clamp(50px, 15vw, 72px);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  font-weight: 700;
+  border-radius: 16px;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(0, 112, 243, 0.1);
+  background: #ffffff;
+}
