@@ -172,13 +172,13 @@ export default function AuthNavbar({ onToggleSidebar }: { onToggleSidebar: () =>
                 gap: "4px"
               }}
             >
-              <Link href="#" className="dropdown-item-custom">
+              <Link href="/dashboard/profile" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-person"></i> View Profile
               </Link>
-              <Link href="#" className="dropdown-item-custom">
+              <Link href="/dashboard/settings" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-gear"></i> Account Settings
               </Link>
-              <Link href="#" className="dropdown-item-custom">
+              <Link href="/dashboard/service-requests" className="dropdown-item-custom" onClick={() => setIsProfileOpen(false)}>
                 <i className="bi bi-clipboard-check"></i> Service Requests
               </Link>
               <div style={{ height: "1px", background: "rgba(0,0,0,0.05)", margin: "8px 4px" }} />
