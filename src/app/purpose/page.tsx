@@ -6,10 +6,10 @@ export default function PurposePage() {
   return (
     <div style={{ paddingTop: "120px" }}>
       {/* --- HERO SECTION --- */}
-      <section style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "40px 0 120px", position: "relative", overflow: "hidden" }}>
         <div className="container-custom">
           <div className="row align-items-center">
-            <div className="col-lg-7">
+            <div className="col-lg-7 mb-5 mb-lg-0">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}

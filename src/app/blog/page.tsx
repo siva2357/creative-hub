@@ -58,18 +58,18 @@ export default function BlogPage() {
   return (
     <div style={{ paddingTop: "120px" }}>
       {/* --- HERO SECTION --- */}
-      <section style={{ padding: "100px 0", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "40px 0 100px", position: "relative", overflow: "hidden" }}>
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <span style={{ 
-              fontSize: "0.75rem", 
-              fontWeight: 800, 
-              letterSpacing: "0.4em", 
-              textTransform: "uppercase", 
+            <span style={{
+              fontSize: "0.75rem",
+              fontWeight: 800,
+              letterSpacing: "0.4em",
+              textTransform: "uppercase",
               color: "var(--accent-primary)",
               marginBottom: "24px",
               display: "block"
@@ -87,18 +87,18 @@ export default function BlogPage() {
       </section>
 
       {/* --- BLOG GRID --- */}
-      <section style={{ paddingBottom: "120px", position: "relative" }}>
+      <section style={{ paddingBottom: "120px", position: "relative", overflow: "hidden" }}>
         <div className="container-custom" style={{ position: "relative" }}>
           {/* Pulsing Rings OVER the grid */}
           <div style={{ position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)", zIndex: 100, pointerEvents: "none" }}>
             {[...Array(3)].map((_, i) => (
               <motion.div
                 key={i}
-                animate={{ 
+                animate={{
                   scale: [1, 4],
                   opacity: [0.15, 0]
                 }}
-                transition={{ 
+                transition={{
                   duration: 8,
                   repeat: Infinity,
                   delay: i * 2.5,
@@ -119,19 +119,19 @@ export default function BlogPage() {
 
           <div className="row g-4" style={{ position: "relative", zIndex: 1 }}>
             {posts.map((post, i) => (
-              <div className="col-lg-4 col-md-6 col-12" key={post.id}>
-                <Link href={`/blog/${post.id}`} style={{ textDecoration: "none", color: "inherit" }}>
+              <div className="col-lg-6 col-md-12" key={post.id}>
+                <Link href={`/blog/${post.id}`} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    whileHover={{ y: -10 }}
+                    whileHover={{ y: -10, borderColor: "rgba(0, 112, 243, 0.6)", boxShadow: "0 20px 40px rgba(0, 112, 243, 0.1)" }}
                     style={{
-                      padding: "40px",
+                      padding: "32px 24px",
                       background: "#fff",
                       borderRadius: "32px",
-                      border: "1.5px solid rgba(0, 112, 243, 0.15)",
+                      border: "2px solid rgba(0, 112, 243, 0.25)",
                       boxShadow: "0 20px 40px rgba(0, 112, 243, 0.03)",
                       height: "100%",
                       transition: "all 0.3s ease",
@@ -161,7 +161,7 @@ export default function BlogPage() {
 
                     <h3 style={{ fontSize: "1.4rem", fontWeight: 700, marginBottom: "16px", lineHeight: 1.3 }}>{post.title}</h3>
                     <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: "24px" }}>{post.excerpt}</p>
-                    
+
                     <div style={{ marginTop: "auto", fontWeight: 700, fontSize: "0.9rem", color: "var(--accent-primary)", display: "flex", alignItems: "center", gap: "8px" }}>
                       Read Analysis <i className="bi bi-arrow-right"></i>
                     </div>

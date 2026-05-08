@@ -22,10 +22,28 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       {/* --- HERO --- */}
       <section style={{ 
         position: "relative", 
-        padding: "80px 0", 
+        padding: "clamp(20px, 5vw, 80px) 0", 
         overflow: "hidden"
       }}>
         <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Link href="/products" style={{ 
+              display: "inline-flex", 
+              alignItems: "center", 
+              gap: "8px", 
+              color: "var(--accent-primary)", 
+              fontSize: "0.9rem",
+              fontWeight: 700,
+              marginBottom: "32px",
+              textDecoration: "none"
+            }}>
+              <i className="bi bi-arrow-left"></i> Back to Ecosystem
+            </Link>
+          </motion.div>
           <div className="row align-items-center">
             <div className="col-lg-7">
               <motion.div
@@ -33,33 +51,15 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <Link href="/products" style={{ 
-                  display: "inline-flex", 
-                  alignItems: "center", 
-                  gap: "8px", 
-                  color: "var(--accent-primary)", 
-                  fontSize: "0.9rem",
-                  fontWeight: 700,
-                  marginBottom: "32px",
-                  textDecoration: "none"
-                }}>
-                  <i className="bi bi-arrow-left"></i> Back to Ecosystem
-                </Link>
                 <h1 className="section-title" style={{ fontSize: "clamp(2.8rem, 7vw, 4.5rem)", textAlign: "left", lineHeight: 1.0, marginBottom: "24px", fontWeight: 800 }}>
                   {product.title}
                 </h1>
-                <p style={{ fontSize: "1.3rem", color: "var(--text-secondary)", marginBottom: "48px", maxWidth: "650px", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "1.3rem", color: "var(--text-secondary)", maxWidth: "650px", lineHeight: 1.6 }}>
                   {product.subtitle}. {product.description}
                 </p>
-                <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-                  <button className="pill-button" style={{ padding: "14px 40px" }}>Deploy Now</button>
-                  <button className="pill-button" style={{ 
-                    background: "transparent", 
-                    border: "1.5px solid rgba(0, 112, 243, 0.2)", 
-                    color: "var(--text-primary)",
-                    padding: "14px 40px"
-                  }}>
-                    Documentation
+                <div style={{ display: "flex", justifyContent: "center", marginTop: "40px", marginBottom: "40px" }}>
+                  <button className="pill-button" style={{ padding: "14px 48px", fontSize: "1rem", background: "var(--text-primary)", color: "var(--bg-primary)" }}>
+                    Visit Website
                   </button>
                 </div>
               </motion.div>
@@ -71,6 +71,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 transition={{ duration: 1 }}
                 style={{
                   width: "100%",
+                  maxWidth: "400px",
+                  margin: "0 auto",
                   aspectRatio: "1/1",
                   background: "#000",
                   borderRadius: "48px",
@@ -111,10 +113,10 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   <img 
                     src={product.image} 
                     alt={product.imageAlt} 
-                    style={{ width: "240px", height: "auto", objectFit: "contain", zIndex: 1 }} 
+                    style={{ width: "160px", height: "auto", objectFit: "contain", zIndex: 1 }} 
                   />
                 ) : (
-                  <i className="bi bi-cpu" style={{ fontSize: "6rem", color: "var(--accent-primary)", filter: "drop-shadow(0 0 20px rgba(0, 112, 243, 0.5))", zIndex: 1 }}></i>
+                  <i className="bi bi-cpu" style={{ fontSize: "5rem", color: "var(--accent-primary)", filter: "drop-shadow(0 0 20px rgba(0, 112, 243, 0.5))", zIndex: 1 }}></i>
                 )}
               </motion.div>
             </div>
@@ -123,7 +125,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       </section>
 
       {/* --- DEEP DIVE --- */}
-      <section style={{ padding: "120px 0", position: "relative" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 120px) 0", position: "relative" }}>
         <div className="container-custom">
           <div className="row g-5">
             <div className="col-lg-6">
@@ -185,7 +187,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       </section>
 
       {/* --- INTEGRATION --- */}
-      <section style={{ padding: "100px 0", position: "relative" }}>
+      <section style={{ padding: "clamp(40px, 6vw, 100px) 0", position: "relative" }}>
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -225,6 +227,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 <motion.img 
                   key={logo.name}
                   whileHover={{ scale: 1.2, filter: "grayscale(0%) opacity(1)" }}
+                  whileTap={{ scale: 1.2, filter: "grayscale(0%) opacity(1)" }}
                   src={`/${logo.name}.png`} 
                   alt={logo.name} 
                   style={{ 
@@ -232,7 +235,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                     width: "auto", 
                     objectFit: "contain",
                     filter: "grayscale(100%) opacity(0.5)",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                    cursor: "pointer"
                   }} 
                 />
               ))}

@@ -19,7 +19,7 @@ export default async function ProductDetails({ params }: { params: Promise<{ pro
 
   if (!product) {
     return (
-      <div style={{ paddingTop: "150px", textAlign: "center" }} className="container-custom">
+      <div style={{ paddingTop: "100px", textAlign: "center" }} className="container-custom">
         <h1>Product not found</h1>
         <Link href="/products" className="pill-button" style={{ marginTop: "20px" }}>Back to Ecosystem</Link>
       </div>

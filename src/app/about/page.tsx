@@ -6,14 +6,14 @@ export default function AboutPage() {
   return (
     <div style={{ paddingTop: "120px" }}>
       {/* --- HERO SECTION --- */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "120px 0" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "clamp(40px, 8vw, 120px) 0" }}>
         {/* Background Layer */}
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>
         </div>
 
         <div className="container-custom">
           <div className="row align-items-center">
-            <div className="col-lg-7">
+            <div className="col-lg-7 mb-5 mb-lg-0">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function AboutPage() {
       </section>
 
       {/* --- CORE PRINCIPLES --- */}
-      <section style={{ padding: "120px 0", position: "relative" }}>
+      <section style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}>
         <div className="container-custom" style={{ position: "relative" }}>
           <div className="text-center" style={{ marginBottom: "80px", position: "relative", zIndex: 1 }}>
             <h2 className="section-title">The Foundation.</h2>
@@ -243,7 +243,7 @@ export default function AboutPage() {
       <section style={{ padding: "100px 0", background: "linear-gradient(to bottom, #fff, #fafafa)", textAlign: "center" }}>
         <div className="container-custom">
           <h2 style={{ fontSize: "2.5rem", marginBottom: "40px" }}>Want to learn more?</h2>
-          <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", flexWrap: "wrap" }}>
             <button className="pill-button" style={{ background: "black", color: "white" }}>View Our Blog</button>
             <button className="pill-button">Contact the Team</button>
           </div>

@@ -8,14 +8,14 @@ export default function ProductsPage() {
   return (
     <div style={{ paddingTop: "120px" }}>
       {/* --- HERO SECTION --- */}
-      <section style={{ position: "relative", overflow: "hidden", padding: "100px 0" }}>
+      <section style={{ position: "relative", overflow: "hidden", padding: "clamp(40px, 8vw, 100px) 0 100px" }}>
         {/* Background Layer */}
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>
         </div>
 
         <div className="container-custom">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
+          <div className="row align-items-center justify-content-between">
+            <div className="col-lg-6 mb-5 mb-lg-0">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -41,13 +41,14 @@ export default function ProductsPage() {
               </motion.div>
             </div>
 
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.3 }}
                 className="hero-icon-grid"
                 style={{
+                  marginLeft: "auto",
                   display: "grid",
                   gridTemplateColumns: "repeat(3, 1fr)",
                   gap: "16px",
@@ -121,8 +122,8 @@ export default function ProductsPage() {
           }}
         >
           <div className="container-custom">
-            <div className={`row align-items-center ${product.align === "right" ? "flex-row-reverse" : ""}`}>
-              <div className="col-lg-6">
+            <div className={`row align-items-center ${product.align === "right" ? "flex-lg-row-reverse" : ""}`}>
+              <div className="col-lg-6 mb-5 mb-lg-0">
                 <motion.div
                   initial={{ opacity: 0, x: product.align === "left" ? -40 : 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -236,40 +237,24 @@ export default function ProductsPage() {
         }
 
         /* =========================
-            DESKTOP & TABLET (>= 768px)
+            DESKTOP (>= 992px)
         ========================== */
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           .container-custom {
             padding-left: 48px !important;
             padding-right: 48px !important;
-          }
-
-          .row.align-items-center {
-            flex-direction: row !important;
-          }
-          
-          .col-md-6, .col-lg-6 {
-            width: 50% !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            text-align: left !important;
           }
 
           .product-image-container {
             margin-top: 0 !important;
             height: 380px !important;
           }
-
-          .product-section .row.flex-row-reverse {
-            flex-direction: row-reverse !important;
-          }
         }
 
         /* =========================
-            MOBILE (< 768px)
+            TABLET & MOBILE (< 992px)
         ========================== */
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
           .container-custom {
             padding-left: 24px !important;
             padding-right: 24px !important;
@@ -291,7 +276,7 @@ export default function ProductsPage() {
             padding: 24px !important;
             grid-template-columns: repeat(3, 1fr) !important;
             gap: 12px !important;
-            margin-top: 24px !important;
+            margin-top: 40px !important;
             width: 100% !important;
           }
 
@@ -302,18 +287,6 @@ export default function ProductsPage() {
           /* Product Sections Stacked */
           .product-section {
             padding: 60px 0 !important;
-          }
-
-          .product-section .row {
-            flex-direction: column !important;
-          }
-
-          .col-md-6, .col-lg-6 {
-            width: 100% !important;
-            margin-bottom: 40px;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
           }
 
           .product-section h2 {
